@@ -20,6 +20,14 @@
 
 const char* my_version = "1.0";
 
+static void show_help(const char *cmd)
+{
+    fprintf(stderr,"Usage: %s [options]\n", cmd);
+    fprintf(stderr, "options include:\n"
+                    "  --version, -v        : show version\n"
+                    "  --showint, -s value  : show an int value specified by user\n");
+}
+
 int main(int argc, char *argv[])
 {
     opterr = 0;
@@ -46,7 +54,7 @@ int main(int argc, char *argv[])
             printf("show value : %d\n", atoi(optarg));
             break;
         case '?':
-            fprintf(stderr, "usage: %s -v [-s intValue]\n", argv[0]);
+            show_help(argv[0]);
             exit(EXIT_FAILURE);
         }
     } while (1);
