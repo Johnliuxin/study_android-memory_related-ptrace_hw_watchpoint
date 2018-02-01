@@ -3,9 +3,13 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES:= main.c
+LOCAL_SRC_FILES:= main.cpp
 
-LOCAL_SHARED_LIBRARIES:= libcutils
+LOCAL_C_INCLUDES:= \
+    bionic         \
+    external/stlport/stlport
+
+LOCAL_SHARED_LIBRARIES:= libcutils libstlport
 
 LOCAL_MODULE:= your_own_bin
 
