@@ -30,6 +30,11 @@ static void show_help(const char *cmd)
 
 int main(int argc, char *argv[])
 {
+    if (argc <= 1) {
+        show_help(argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
     opterr = 0;
     do {
         int c;
@@ -53,7 +58,7 @@ int main(int argc, char *argv[])
         case 's':
             printf("show value : %d\n", atoi(optarg));
             break;
-        case '?':
+        default:
             show_help(argv[0]);
             exit(EXIT_FAILURE);
         }
