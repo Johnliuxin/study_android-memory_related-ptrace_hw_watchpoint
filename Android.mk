@@ -6,10 +6,9 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES:= main.cpp
 
 LOCAL_C_INCLUDES:= \
-    bionic         \
-    external/stlport/stlport
+    bionic
 
-LOCAL_SHARED_LIBRARIES:= libcutils libstlport
+LOCAL_SHARED_LIBRARIES:= libcutils
 
 LOCAL_MODULE:= your_own_bin
 
