@@ -12,4 +12,9 @@ LOCAL_SHARED_LIBRARIES:= libcutils
 
 LOCAL_MODULE:= your_own_bin
 
+LOCAL_CFLAGS += \
+    -Wno-error=missing-field-initializers \
+    -Wno-error=bitfield-constant-conversion \
+    -Wno-error=unused-parameter
+
 include $(BUILD_EXECUTABLE)
